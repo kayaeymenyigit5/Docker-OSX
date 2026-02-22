@@ -23,8 +23,8 @@
 # Build:
 #
 #       docker build -t docker-osx .
-#       docker build -t docker-osx --build-arg VERSION=10.15.5 --build-arg SIZE=200G .
-#       docker build -t docker-osx-sonoma --build-arg BRANCH=sonoma --build-arg SHORTNAME=sonoma .
+#       docker build -t docker-osx --build-arg VERSION=26 --build-arg SIZE=200G .
+#       docker build -t docker-osx-tahoe --build-arg BRANCH=tahoe --build-arg SHORTNAME=tahoe .
 #
 # Basic Run:
 #
@@ -39,7 +39,7 @@
 #
 #       -v $PWD/disk.img:/image
 #       -e SIZE=200G
-#       -e VERSION=10.15.6
+#       -e VERSION=26
 #       -e RAM=5
 #       -e SMP=4
 #       -e CORES=4
@@ -57,7 +57,7 @@ LABEL maintainer='https://twitter.com/sickcodes <https://sick.codes>'
 
 SHELL ["/bin/bash", "-c"]
 
-# change disk size here or add during build, e.g. --build-arg VERSION=10.14.5 --build-arg SIZE=50G
+# change disk size here or add during build, e.g. --build-arg VERSION=26 --build-arg SIZE=50G
 ARG SIZE=200G
 ARG PARALLEL_DOWNLOADS=30
 
@@ -357,7 +357,7 @@ VOLUME ["/tmp/.X11-unix"]
 # If BaseSystem.img does not exist, download ${SHORTNAME}
 
 # shortname default is below
-ENV SHORTNAME=sequoia
+ENV SHORTNAME=tahoe
 
 ENV BASESYSTEM_IMAGE=BaseSystem.img
 
